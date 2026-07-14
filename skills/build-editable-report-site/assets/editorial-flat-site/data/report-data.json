@@ -1,0 +1,41 @@
+{
+  "charts": {
+    "supply": {
+      "eyebrow": "SUPPLY",
+      "title": "官网供给结构",
+      "rows": [
+        {"label": "区间 A", "value": 32, "display": "32.0%", "detail": "32 SKU · 中位数示例"},
+        {"label": "区间 B", "value": 46, "display": "46.0%", "detail": "46 SKU · 中位数示例"},
+        {"label": "区间 C", "value": 22, "display": "22.0%", "detail": "22 SKU · 中位数示例"}
+      ]
+    },
+    "market": {
+      "eyebrow": "MARKET",
+      "title": "热销渠道结构",
+      "rows": [
+        {"label": "区间 A", "value": 50, "display": "50.0%", "detail": "10 SKU · 中位数示例"},
+        {"label": "区间 B", "value": 30, "display": "30.0%", "detail": "6 SKU · 中位数示例"},
+        {"label": "区间 C", "value": 20, "display": "20.0%", "detail": "4 SKU · 中位数示例"}
+      ]
+    }
+  },
+  "metrics": {
+    "capabilityCoverage": [
+      {"label": "能力 A", "value": 70, "display": "70.0%", "count": "14 / 20"},
+      {"label": "能力 B", "value": 55, "display": "55.0%", "count": "11 / 20"},
+      {"label": "能力 C", "value": 30, "display": "30.0%", "count": "6 / 20"}
+    ]
+  },
+  "tables": {
+    "skuDrilldown": {
+      "columns": ["型号", "能力组合", "价格", "排序", "主打卖点"],
+      "rows": [
+        ["MODEL-001", "能力 A + 能力 B", "€00.00", "#1", "卖点示例"],
+        ["MODEL-002", "能力 A + 能力 C", "€00.00", "#2", "卖点示例"]
+      ]
+    }
+  },
+  "downloads": [
+    {"label": "下载 Markdown 分析报告", "href": "/downloads/report.md", "meta": "MD"}
+  ]
+}

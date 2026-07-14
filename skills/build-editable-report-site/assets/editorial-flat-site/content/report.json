@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "brandEyebrow": "CATEGORY INTELLIGENCE",
+    "brandTitle": "品类市场分析",
+    "reportLabel": "市场与品类全貌扫描",
+    "reportDate": "YYYY.MM.DD · MARKET",
+    "heroKicker": "EXECUTIVE THESIS",
+    "heroTitle": "核心结论写在这里，",
+    "heroAccent": "让读者第一眼理解市场事实。",
+    "subtitle": "基于已确认 Markdown 与结构化数据生成",
+    "heroSummary": "这里保留与原始报告相同的信息密度，概括最重要的事实、含义和分析边界。",
+    "findingsKicker": "EVIDENCE-BACKED FINDINGS",
+    "boundaryLabel": "分析边界",
+    "boundaryText": "明确当前数据能够支持什么，以及哪些判断因为数据缺失需要暂停。"
+  },
+  "findings": [
+    {
+      "label": "关键发现 01",
+      "title": "用一句话写出有数字支持的核心结论",
+      "explanation": "解释结论如何从数据中得出、对产品判断意味着什么，并避免把相关性写成因果。",
+      "sources": ["数据表｜工作表或字段"],
+      "target": "market"
+    },
+    {
+      "label": "关键发现 02",
+      "title": "指出供给方向与市场表现之间的差异",
+      "explanation": "官网数据代表供给方向，热销渠道数据代表样本范围内的市场表现代理，两者不混为同一总体。",
+      "sources": ["官网底表", "热销渠道底表"],
+      "target": "capability"
+    }
+  ],
+  "sections": [
+    {
+      "id": "market",
+      "kicker": "MARKET STRUCTURE",
+      "title": "市场结构",
+      "summary": "先给结论和解释，再展示支撑结论的图表与明细。",
+      "findingIndexes": [0],
+      "blocks": [
+        {
+          "type": "chart-group",
+          "title": "供给与市场结构",
+          "note": "相同指标保持统一口径",
+          "dataIds": ["supply", "market"]
+        },
+        {
+          "type": "callout",
+          "label": "读数",
+          "text": "在这里解释图表最值得关注的差异，并写明分母或样本范围。",
+          "tone": "evidence"
+        },
+        {
+          "type": "details",
+          "summary": "数据来源与计算口径",
+          "paragraphs": [
+            "写清楚数据来源、采样时间、纳入与排除条件。",
+            "写清楚排序、占比、中位数或交叉分析的计算口径。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "capability",
+      "kicker": "CAPABILITY & COMPETITION",
+      "title": "能力与竞争",
+      "summary": "高覆盖能力是品类门槛，低覆盖但有明确价值的能力才可能形成差异。",
+      "findingIndexes": [1],
+      "blocks": [
+        {
+          "type": "metrics",
+          "title": "关键能力覆盖",
+          "note": "优先展示百分比，再标注分子与分母",
+          "dataId": "capabilityCoverage"
+        },
+        {
+          "type": "table",
+          "title": "SKU 下钻",
+          "note": "表格数据保持锁定",
+          "dataId": "skuDrilldown"
+        }
+      ]
+    }
+  ],
+  "appendix": {
+    "kicker": "SOURCE ARCHIVE",
+    "title": "底表与分析存档",
+    "text": "Excel 保留事实底表，Markdown 保留经确认的完整分析结论；网页只承担展示和文字微调。"
+  },
+  "footer": {
+    "title": "AI-NATIVE CATEGORY INTELLIGENCE",
+    "text": "Generated from verified source files"
+  }
+}
