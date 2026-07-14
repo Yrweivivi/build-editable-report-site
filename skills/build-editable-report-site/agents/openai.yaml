@@ -1,4 +1,4 @@
 interface:
   display_name: "可编辑 HTML 报告发布"
-  short_description: "将 Markdown 与数据文件生成可编辑报告并发布部署"
-  default_prompt: "使用 $build-editable-report-site 将我确认的 Markdown 和数据文件生成可编辑 HTML 报告并部署。"
+  short_description: "生成可编辑报告并适配公开或私有 GitHub 仓库部署"
+  default_prompt: "使用 $build-editable-report-site 将我确认的 Markdown 和数据文件生成可编辑 HTML 报告，并按仓库可见性完成 GitHub 同步和部署。"

@@ -13,9 +13,10 @@
 - 锁定图表数值、比例、SKU、价格、排名和数据表。
 - 网页端只向 GitHub 更新叙事内容文件，不反向修改 Markdown 或 Excel。
 - 支持 GitHub 版本管理和 Sites 打包部署。
+- 支持 Public 仓库直接同步，以及 Private 仓库通过 Sites 后端安全读取。
 - 内置输入审计、项目初始化和严格校验脚本。
 
-## V1 设计范围
+## V1.1 设计范围
 
 当前版本只内置经过验证的 `editorial-flat` 扁平洞察样式：
 
@@ -23,6 +24,8 @@
 - 正文遵循“结论 → 解释 → 图表或证据 → 下钻 → 来源”。
 - 避免传统 BI Dashboard 式的多层卡片堆叠。
 - 不包含开源模板搜索、模板自动匹配或第三方网站复刻；这些能力留给后续版本。
+- 创建或更新站点时确认 GitHub 仓库可见性；未说明时询问一次，已说明时自动执行。
+- Public 仓库使用直接同步；Private 仓库使用 Sites 后端和只读 Secret，网站仍可公开访问。
 
 ## 仓库结构
 
@@ -74,7 +77,7 @@ cp -R build-editable-report-site/skills/build-editable-report-site ~/.codex/skil
 - 需要随报告下载的附件。
 - HTML 输出目录。
 - 已有 GitHub 仓库，或创建新仓库的授权。
-- 公开或受限部署要求。
+- GitHub 仓库采用 Public 还是 Private，以及网站公开或受限部署要求。
 
 ## 标准工作流
 
@@ -105,6 +108,8 @@ cp -R build-editable-report-site/skills/build-editable-report-site ~/.codex/skil
 
 ## GitHub 发布安全
 
+- Public 仓库直接读取公开内容，不需要服务器端读取 Token。
+- Private 仓库由 Sites 后端读取，读取 Token 只授予目标仓库 Contents 只读权限，并保存为 Sites Secret。
 - 使用 Fine-grained personal access token。
 - Token 只授权目标仓库的 Contents 读写权限。
 - 用户每次在网页发布时手动粘贴 Token。
@@ -188,5 +193,5 @@ npm run build
 
 - HTML 修改不会反向更新 Markdown 和 Excel。
 - 没有结构化数据时不会自行猜测图表数值。
-- V1 只支持当前内置设计样式。
+- V1.1 只支持当前内置设计样式。
 - 生产部署和真实 GitHub Token 写入需要在具体报告任务中单独授权和验证。
